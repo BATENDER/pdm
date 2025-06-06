@@ -1,74 +1,181 @@
-# Medication Hopper - React Native (Expo) App
+# Medication Hopper
 
-Este é um aplicativo de lembrete de medicação desenvolvido com React Native e Expo, inspirado no design do Google Grasshopper.
+<div align="center">
+  <img src="assets/grasshopper_mascot.png" alt="Medication Hopper Logo" width="120" height="120">
+  <h3>Seu assistente de lembretes de medicação</h3>
+</div>
 
-## Visão Geral
+## 📋 Índice
 
-O aplicativo permite que um responsável (guardião) gerencie medicamentos e agendamentos para um paciente, receba notificações e marque as medicações como administradas.
+- [Sobre o Projeto](#-sobre-o-projeto)
+- [Funcionalidades](#-funcionalidades)
+- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
+- [Estrutura do Projeto](#-estrutura-do-projeto)
+- [Instalação e Uso](#-instalação-e-uso)
+- [Papéis de Usuário](#-papéis-de-usuário)
+- [Capturas de Tela](#-capturas-de-tela)
+- [Próximos Passos](#-próximos-passos)
+- [Contribuição](#-contribuição)
+- [Licença](#-licença)
 
-## Funcionalidades Implementadas (Base)
+## 🔍 Sobre o Projeto
 
-*   **Estrutura do Projeto:** Configurado com TypeScript e Expo.
-*   **Navegação:** Telas principais (Splash, Login, Home, Lista de Medicamentos, Lista de Agendamentos, Alerta, Histórico) conectadas via React Navigation (Stack).
-*   **Armazenamento Local:** Funções básicas para salvar/carregar dados (medicamentos, agendamentos, histórico) usando AsyncStorage.
-*   **Notificações Locais:** Configuração inicial para solicitar permissões e agendar notificações (incluindo um segundo lembrete suave) usando `expo-notifications`.
-*   **Design Básico (Estilo Grasshopper):**
-    *   Paleta de cores inspirada (verdes predominantes).
-    *   Mascote Gafanhoto gerado e integrado (Splash, Login, Home, Alerta).
-    *   Layouts das telas principais com estilo visual inicial.
-*   **CRUD Básico (UI):** Telas de lista para Medicamentos e Agendamentos com botões de Adicionar/Editar/Excluir (navegação e lógica completa de formulários pendentes).
-*   **Tela de Alerta:** Exibe detalhes da medicação e possui um botão interativo (imagem) para marcar como administrada.
-*   **Tela de Histórico:** Exibe registros de medicações administradas.
-*   **Login Simulado:** Tela de login básica para o guardião (usuário 'guardian', senha 'password').
-*   **Integração API (Simulada):** Placeholder para notificar a equipe de manutenção quando um alerta é exibido.
+O **Medication Hopper** é um aplicativo de lembretes de medicação desenvolvido com React Native e Expo, inspirado no design do Google Grasshopper. Seu objetivo principal é ajudar pacientes a seguir corretamente seus tratamentos medicamentosos, reduzindo esquecimentos e erros na administração de medicamentos.
 
-## Como Executar
+O aplicativo foi projetado pensando em três grupos principais:
+- **Pacientes** que precisam seguir tratamentos medicamentosos
+- **Cuidadores e familiares** responsáveis pelo monitoramento
+- **Profissionais de saúde** que acompanham a adesão ao tratamento
 
-1.  **Descompacte** o arquivo `MedicationReminderApp.zip`.
-2.  **Navegue** até o diretório `MedicationReminderApp` no seu terminal:
-    ```bash
-    cd MedicationReminderApp
-    ```
-3.  **Instale as dependências** (se necessário, certifique-se de ter Node.js e npm/yarn instalados):
-    ```bash
-    npm install
-    # ou
-    # yarn install
-    ```
-4.  **Inicie o aplicativo** usando o Expo Go no seu dispositivo móvel ou em um emulador:
-    ```bash
-    npx expo start
-    ```
-    Siga as instruções no terminal para abrir o aplicativo.
+## ✨ Funcionalidades
 
-## Próximos Passos / TODOs
+### Gerenciamento de Medicações
+- Cadastro de medicamentos com nome, dosagem e observações
+- Interface intuitiva e acessível
+- Armazenamento seguro dos dados
 
-*   **Implementar Formulários:** Criar telas e lógica para adicionar/editar medicamentos e agendamentos.
-*   **Autenticação Segura:** Substituir o login simulado por um sistema de autenticação robusto (ex: Firebase Auth, backend próprio com `expo-secure-store`).
-*   **Gerenciamento de Estado:** Implementar um gerenciador de estado (Context API, Zustand, Redux) para compartilhar dados entre as telas de forma mais eficaz.
-*   **Notificações Avançadas:**
-    *   Armazenar IDs de notificação para cancelamento específico.
-    *   Lidar com interações de notificação (ex: marcar como tomado diretamente da notificação).
-    *   Refinar a lógica do segundo alarme.
-*   **Integração API Real:** Implementar a chamada real para a API de notificação da equipe de manutenção.
-*   **Refinamento de UI/UX:**
-    *   Melhorar o design e adicionar mais elementos visuais/animações no estilo Grasshopper.
-    *   Testar e otimizar a usabilidade em diferentes dispositivos.
-*   **Testes:** Adicionar testes unitários e de integração.
-*   **Acessibilidade:** Realizar testes completos com leitores de tela e ajustar conforme necessário.
+### Agendamento Personalizado
+- Criação de horários específicos para cada medicação
+- Vinculação com medicamentos cadastrados
+- Organização visual em listas
 
-## Estrutura de Pastas
+### Sistema de Alertas
+- Notificações no horário exato da medicação
+- Lembretes suaves para minimizar frustração
+- Modal interativo para confirmar administração
+- Alertas para cuidadores via API
+
+### Histórico Completo
+- Registro de medicações tomadas
+- Identificação de doses perdidas
+- Rastreamento de agendamentos criados
+- Visualização cronológica para análise
+
+### Acesso Multiusuário
+- Três níveis de permissão: Usuário, Cuidador e Administrador
+- Navegação condicional baseada no papel do usuário
+- Sistema de autenticação seguro
+
+## 🛠️ Tecnologias Utilizadas
+
+- **React Native**: Framework para desenvolvimento mobile multiplataforma
+- **Expo**: Plataforma para simplificar o desenvolvimento React Native
+- **TypeScript**: Linguagem tipada para maior segurança e produtividade
+- **AsyncStorage**: Armazenamento local persistente
+- **Context API**: Gerenciamento de estado e autenticação
+- **Expo Notifications**: Sistema de notificações em tempo real
+- **React Navigation**: Navegação entre telas
+
+## 📁 Estrutura do Projeto
 
 ```
 MedicationReminderApp/
-├── assets/             # Imagens e fontes
+├── assets/                  # Imagens e recursos estáticos
 ├── src/
-│   ├── navigation/     # Configuração do React Navigation
-│   ├── screens/        # Componentes de tela
-│   └── utils/          # Funções utilitárias (storage, notifications)
-├── App.tsx             # Ponto de entrada principal
-├── app.json            # Configuração do Expo
-├── package.json        # Dependências e scripts
-└── tsconfig.json       # Configuração do TypeScript
+│   ├── components/          # Componentes reutilizáveis
+│   │   ├── AddMedicationModal.tsx
+│   │   ├── AddScheduleModal.tsx
+│   │   └── MedicationAlertModal.tsx
+│   ├── context/             # Contextos React
+│   │   └── AuthContext.tsx  # Contexto de autenticação
+│   ├── navigation/          # Configuração de navegação
+│   │   └── AppNavigator.tsx
+│   ├── screens/             # Telas do aplicativo
+│   │   ├── AlertScreen.tsx
+│   │   ├── HistoryScreen.tsx
+│   │   ├── HomeScreen.tsx
+│   │   ├── LoginScreen.tsx
+│   │   ├── MedicationListScreen.tsx
+│   │   ├── ScheduleListScreen.tsx
+│   │   └── SplashScreen.tsx
+│   └── utils/               # Utilitários e helpers
+│       ├── notifications.ts # Gerenciamento de notificações
+│       └── storage.ts       # Funções de armazenamento
+├── App.tsx                  # Ponto de entrada do aplicativo
+├── app.json                 # Configuração do Expo
+└── package.json             # Dependências do projeto
 ```
 
+## 🚀 Instalação e Uso
+
+### Pré-requisitos
+- Node.js (versão 14 ou superior)
+- npm ou yarn
+- Expo CLI
+
+### Passos para Instalação
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/medication-hopper.git
+   cd medication-hopper
+   ```
+
+2. Instale as dependências:
+   ```bash
+   npm install
+   # ou
+   yarn install
+   ```
+
+3. Instale as dependências específicas do Expo:
+   ```bash
+   npx expo install react-native-screens react-native-safe-area-context @react-navigation/native @react-navigation/stack expo-notifications @react-native-async-storage/async-storage react-native-modal react-native-uuid
+   ```
+
+4. Inicie o aplicativo:
+   ```bash
+   npx expo start
+   ```
+
+5. Use o aplicativo Expo Go no seu dispositivo móvel para escanear o QR code ou execute em um emulador.
+
+## 👥 Papéis de Usuário
+
+### Usuário (Paciente)
+- Acesso à lista de medicações
+- Acesso aos agendamentos
+- Recebimento de alertas de medicação
+
+### Cuidador
+- Acesso à lista de medicações
+- Acesso aos agendamentos
+- Acesso ao histórico de medicação
+- Recebimento de notificações sobre o paciente
+
+### Administrador
+- Acesso completo a todas as funcionalidades
+- Configurações avançadas do sistema
+- Gerenciamento de usuários
+
+## 📱 Capturas de Tela
+
+*Nota: Adicione capturas de tela do seu aplicativo aqui quando disponíveis.*
+
+## 🔮 Próximos Passos
+
+- **Sincronização em nuvem**: Permitir acesso aos dados de qualquer dispositivo
+- **Integração com dispositivos de saúde**: Conectar com monitores de pressão, glicosímetros, etc.
+- **Expansão para versão web completa**: Facilitar o acesso por parte de cuidadores e profissionais de saúde
+- **Relatórios avançados**: Gerar insights sobre a adesão ao tratamento
+- **Suporte a múltiplos idiomas**: Internacionalização do aplicativo
+
+## 🤝 Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests para melhorar o aplicativo.
+
+1. Faça um fork do projeto
+2. Crie sua branch de feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📄 Licença
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para detalhes.
+
+---
+
+<div align="center">
+  <p>Desenvolvido com ❤️ pela Equipe Medication Hopper</p>
+</div>
